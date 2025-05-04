@@ -22,7 +22,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SKIBIDITE_BLOCK = registerBlock ("skibidite_block",
             () -> new Block (BlockBehaviour.Properties.copy (Blocks.IRON_BLOCK).sound (SoundType.AMETHYST)));
-
+    public static final RegistryObject<Block> RAW_SKIBIDITE_BLOCK = registerBlock ("raw_skibidite_block",
+            () -> new Block (BlockBehaviour.Properties.copy (Blocks.IRON_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register (name, block);

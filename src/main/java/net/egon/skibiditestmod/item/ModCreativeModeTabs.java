@@ -21,8 +21,9 @@ public class ModCreativeModeTabs {
                     .displayItems ((pParameters, pOutput) -> {
                         pOutput.accept (ModItems.SKIBIDITE.get ());
                         pOutput.accept (ModItems.RAW_SKIBIDITE.get ());
-                        pOutput.accept (ModBlocks.SKIBIDITE_BLOCK.get ());
 
+                        pOutput.accept (ModBlocks.SKIBIDITE_BLOCK.get ());
+                        pOutput.accept (ModBlocks.RAW_SKIBIDITE_BLOCK.get ());
 
                     })
                     .build());
