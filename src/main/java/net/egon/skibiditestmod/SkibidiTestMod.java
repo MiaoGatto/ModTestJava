@@ -1,6 +1,10 @@
 package net.egon.skibiditestmod;
 
 import com.mojang.logging.LogUtils;
+import net.egon.skibiditestmod.block.ModBlocks;
+import net.egon.skibiditestmod.item.ModCreativeModeTabs;
+import net.egon.skibiditestmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,6 +30,11 @@ public class SkibidiTestMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModeTabs.register (modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -41,7 +50,9 @@ public class SkibidiTestMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
+        if(event.getTabKey () == CreativeModeTabs.INGREDIENTS) {
 
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
